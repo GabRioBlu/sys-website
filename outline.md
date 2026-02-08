@@ -1,4 +1,4 @@
-# Reader: Access prestigiously maintained planning document.
+# > Reader: Access prestigiously maintained planning document.
 
 - so we should make stuff -caroline
 - pronouns.cc like member pages. headmate comment system - indigo
