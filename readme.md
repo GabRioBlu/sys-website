@@ -1,3 +1,10 @@
+# Kanaya: Scold your headmates.
+
+GA: So Help Me God If Any Of You Care About Having The Git Usernames Line Up Then Remember To Change Them Beforehand Or You Are Going To Have To Be The One To Deal With The Headache Of Fixing It  
+GA: That Was Hellish And Id Rather Not Do It Again
+
+Now that that's over with...
+
 # Reader: Read readme.md, as the file name instructs.  
 ==>
 
