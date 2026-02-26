@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+h1 {
+    color: #0000d0;
+    position: relative;
+    font-weight: 700;
+    user-select: none;
+    text-shadow: 5px 5px 2px #0000a0, 2px 12px 4px #000090, 0px 0px 10px #0000d0, 0px 0px 20px #0000b0, 0px 0px 30px #0000b0, 0px 0px 40px #0000b0, 0px 0px 50px #0000b0;
+}
+
+#container {
+    position: relative;
+}
+
+#noise {
+    position: absolute;
+    background-image: url("noise.png");
+    background-color: #000090;
+    opacity: 30%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    box-shadow: inset 0px 5px 10px 20px black;
+}
