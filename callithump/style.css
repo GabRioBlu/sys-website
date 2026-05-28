@@ -11,10 +11,34 @@
     flex-direction: column;
 }
 
+details {
+    padding: 0;
+    margin: 1em 25%;
+}
+
+details>.lyrics {
+    background-color: rgba(150, 150, 180, 0.7);
+    /*padding-top: 0.5em;*/
+    padding-bottom: 0.5em;
+    border-radius: 1em;
+    border: 2px solid rgba(50, 50, 60, 0.8)
+}
+
+.lyrics>p {
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+summary {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
 .songtitle {
-    padding: 0.5em;
-    margin: auto;
-    margin-bottom: 2em;
+    padding: 0.3em;
+    margin: 0;
     background-color: rgba(200, 200, 220, 0.7)
 }
 
