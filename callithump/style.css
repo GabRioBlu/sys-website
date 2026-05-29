@@ -24,6 +24,13 @@ details>.lyrics {
     border: 2px solid rgba(50, 50, 60, 0.8)
 }
 
+.lyrics>h2 {
+    text-align: center;
+    color: white;
+    margin: auto;
+    margin-bottom: 0.5em;
+}
+
 .lyrics>p {
     text-align: center;
     color: white;
