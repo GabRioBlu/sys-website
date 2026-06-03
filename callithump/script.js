@@ -1,6 +1,6 @@
 window.onload = init;
 
-function init () {
+function init() {
     lyrics.songs.forEach((song) => {
     var title = document.createElement("p");
     title.innerText = song.name;
@@ -12,12 +12,17 @@ function init () {
 
     var note = document.createElement("h2");
     note.innerHTML = song.note;
-    var lyrics = document.createElement("p");
-    lyrics.innerHTML = song.lyrics;
     var lyricsDiv = document.createElement("div");
     lyricsDiv.className = "lyrics";
     lyricsDiv.appendChild(note);
-    lyricsDiv.appendChild(lyrics);
+
+    song.lyrics.forEach((lyric) => {
+        var lyricP = document.createElement("p");
+        for(let i = 0; i < lyric.lines.length; i++) {
+            lyricP.innerHTML += (i > 0 ? "<br>" : "") + lyric.lines[i] + ((lyric.lines[i] == "" && i == lyric.lines.length - 1) ? "<br>" : "");
+        }
+        lyricsDiv.appendChild(lyricP);
+    });
 
     var details = document.createElement("details");
     details.appendChild(summary);
