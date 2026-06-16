@@ -13,10 +13,10 @@
 
 details {
     padding: 0;
-    margin: 1em 25%;
+    margin: 1em 30%;
 }
 
-details>.lyrics {
+details>.lyrics, .comments {
     background-color: rgba(150, 150, 180, 0.7);
     /*padding-top: 0.5em;*/
     padding-bottom: 0.5em;
@@ -31,10 +31,39 @@ details>.lyrics {
     margin-bottom: 0.5em;
 }
 
-.lyrics>p {
+.lyrics p {
     text-align: center;
     color: white;
     margin: 0;
+}
+
+.comments {
+    visibility: hidden;
+    width: 30%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    right: 0%;
+    z-index: 1;
+    display: inline;
+    padding: 0;
+}
+
+.comments p {
+    text-align: center;
+    margin: 0;
+}
+
+.hascomments>p {
+    text-decoration: underline;
+}
+
+.hascomments:hover>.comments {
+    visibility: visible;
+}
+
+.hascomments:hover>p {
+    color: lightgray;
 }
 
 summary {
