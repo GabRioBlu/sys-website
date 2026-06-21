@@ -21,7 +21,7 @@ details>.lyrics, .comments {
     /*padding-top: 0.5em;*/
     padding-bottom: 0.5em;
     border-radius: 1em;
-    border: 2px solid rgba(50, 50, 60, 0.8)
+    border: 2px solid rgba(50, 50, 60, 0.8);
 }
 
 .lyrics>h2 {
@@ -38,14 +38,13 @@ details>.lyrics, .comments {
 }
 
 .comments {
-    visibility: hidden;
+    display: none;
     width: 30%;
     text-align: center;
     color: white;
     position: absolute;
     right: 0%;
     z-index: 1;
-    display: inline;
     padding: 0;
 }
 
@@ -59,7 +58,7 @@ details>.lyrics, .comments {
 }
 
 .hascomments:hover>.comments {
-    visibility: visible;
+    display: inline;
 }
 
 .hascomments:hover>p {
@@ -75,7 +74,9 @@ summary {
 .songtitle {
     padding: 0.3em;
     margin: 0;
-    background-color: rgba(200, 200, 220, 0.7)
+    background-color: rgba(200, 200, 220, 0.7);
+    /*border: 10px solid transparent;
+    border-image: url("background.jpg") 30 round;*/
 }
 
 .songtitle>p {
