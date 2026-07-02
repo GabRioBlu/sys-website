@@ -21,7 +21,8 @@ details>.lyrics, .comments {
     /*padding-top: 0.5em;*/
     padding-bottom: 0.5em;
     border-radius: 1em;
-    border: 2px solid rgba(50, 50, 60, 0.8);
+    outline: 2px solid rgba(50, 50, 60, 0.8);
+    outline-offset: -2px;
 }
 
 .lyrics>h2 {
@@ -29,12 +30,14 @@ details>.lyrics, .comments {
     color: white;
     margin: auto;
     margin-bottom: 0.5em;
+    font-size: 1.5vw;
 }
 
-.lyrics p {
+.lyrics div {
     text-align: center;
     color: white;
     margin: 0;
+    font-size: 1vw;
 }
 
 .comments {
@@ -48,12 +51,30 @@ details>.lyrics, .comments {
     padding: 0;
 }
 
-.comments p {
+.comments div {
+    width: 100%;
     text-align: center;
     margin: 0;
 }
 
-.hascomments>p {
+.comments img {
+    /*float: left;*/
+    width: 15%;
+    border-radius: 1em;
+    outline: 2px solid rgba(50, 50, 60, 0.8);
+    outline-offset: -2px;
+}
+
+.comments section {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+}
+.comments section ~ section {
+    margin-top: 0.2em;
+}
+
+.hascomments {
     text-decoration: underline;
 }
 
@@ -61,7 +82,7 @@ details>.lyrics, .comments {
     display: inline;
 }
 
-.hascomments:hover>p {
+.hascomments:hover {
     color: lightgray;
 }
 
@@ -82,7 +103,7 @@ summary {
 .songtitle>p {
     text-align: center;
     color: white;
-    font-size: 2.5rem;
+    font-size: 2.5vw;
     font-weight: bold;
     -webkit-text-stroke: 1px black;
     margin: 0;

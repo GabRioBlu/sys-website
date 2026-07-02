@@ -41,7 +41,7 @@ var lyrics = {
                     ],
                     "comments": [
                         {"icon": "charlotte_default", "lines": ["it did seem like she was waiting for something"]},
-                        {"icon": "charlotte_sentimental", "lines": ["maybe she was just trying to hold on for as long as she could"]}
+                        {"icon": "charlotte_downcast", "lines": ["maybe she was just trying to hold on for as long as she could"]}
                     ]
                 },
                 {
@@ -49,14 +49,14 @@ var lyrics = {
                         "I DON'T WANNA WASTE AWAY",
                         "I DON'T WANNA WASTE AWAY"
                     ],
-                    "comments": [{"icon": "charlotte_pained_eyecontact", "lines": [
+                    "comments": [{"icon": "charlotte_pained", "lines": [
                         "i think we were both thinking this",
                         "that's what i imagined would happen to me after she was gone"
                     ]}]
                 },
                 {
                     "lines": ["are you waiting, are you waiting, are you waiting to wake up?"],
-                    "comments": [{"icon": "charlotte_pained", "lines": ["just like that it was all over"]}]
+                    "comments": [{"icon": "charlotte_default", "lines": ["just like that it was all over"]}]
                 }
             ],
         },
@@ -110,7 +110,7 @@ var lyrics = {
                     "comments": [
                         {"icon": "charlotte_default", "lines": [
                             "the idea that trans people are lying about their identities to achieve something",
-                            "or that there's something malicious they have to uncover"
+                            "or that there's something malicious to uncover"
                         ]},
                         { "icon": "charlotte_smile", "lines": ["the \"we can always tell\" crowd cannot always tell"]}
                     ]

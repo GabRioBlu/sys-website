@@ -1,59 +1,60 @@
 window.onload = init;
 
+function createElement(type, attributes, content) {
+    let element = document.createElement(type);
+    for (let attribute in attributes) {
+        element.setAttribute(attribute, attributes[attribute]);
+    }
+    element.innerHTML = content || null;
+    return element;
+}
+
 function init() {
     lyrics.songs.forEach((song) => {
-    var details = document.createElement("details");
+    let details = document.createElement("details");
     document.getElementById("container").appendChild(details);
 
-    var title = document.createElement("p");
-    title.innerText = song.name;
-    var summaryDiv = document.createElement("div");
-    summaryDiv.className = "songtitle";
-    summaryDiv.appendChild(title);
-    var summary = document.createElement("summary");
-    summary.appendChild(summaryDiv)
+    let summary = createElement("summary", {class: "songtitle"});
+    summary.appendChild(createElement("p", {}, song.name));
 
     details.appendChild(summary);
 
-    var note = document.createElement("h2");
-    note.innerHTML = song.note;
-    var lyricsDiv = document.createElement("div");
-    lyricsDiv.className = "lyrics";
-    lyricsDiv.appendChild(note);
+    let lyricsDiv = createElement("article", {class: "lyrics"});
+    lyricsDiv.appendChild(createElement("h2", {}, song.note));
 
     details.appendChild(lyricsDiv);
 
     song.lyrics.forEach((lyric) => {
-        var lyricDiv = document.createElement("div");
+        let lyricChunk = document.createElement("div");
         if(lyric.comments[0].lines[0] != "") {
-            lyricDiv.className = "hascomments";
-            lyricDiv.addEventListener("mouseover", commentAlign);
-            var commentsDiv = document.createElement("div");
-            commentsDiv.className = "comments";
-            lyricDiv.appendChild(commentsDiv);
+            lyricChunk.className = "hascomments";
+            lyricChunk.addEventListener("mouseover", commentAlign);
+            let commentsDiv = createElement("div", {class: "comments"})
+            lyricChunk.appendChild(commentsDiv);
 
-            for (let i = 0; i < lyric.comments.length; i++) {
-                commentsDiv.innerHTML += (i > 0 ? "<br>" : "");
-                lyric.comments[i].lines.forEach((line) => {
-                    var commentP = document.createElement("p");
-                    commentP.innerHTML = line + (line == "" ? "<br>" : "");
-                    commentsDiv.appendChild(commentP);
-                });
-            }
+            lyric.comments.forEach((comment) => {
+                let commentChunk = document.createElement("section");
+                let icon = createElement("img", {src: "icons/" + comment.icon + ".png"});
+                commentChunk.appendChild(icon);
+                let commentElement = document.createElement("div");
+                commentChunk.appendChild(commentElement);
 
-            // for (let i = 0; i < lyric.comments[0].lines.length; i++) {
-            //     var commentP = document.createElement("p");
-            //     commentP.innerHTML = lyric.comments[0].lines[i] + (lyric.comments[0].lines[i] == "" ? "<br>" : "");
-            //     commentsDiv.appendChild(commentP);
-            // }
+                for(let i = 0; i < comment.lines.length; i++) {
+                    commentElement.innerHTML += (i > 0 ? "<br>" : "") + comment.lines[i];
+                }
+
+                commentsDiv.appendChild(commentChunk);
+            });
         }
         for(let i = 0; i < lyric.lines.length; i++) {
-            var lyricP = document.createElement("p");
+            // let lyricP = document.createElement("p");
             // lyricP.innerHTML += (i > 0 ? "<br>" : "") + lyric.lines[i] + ((lyric.lines[i] == "" && i == lyric.lines.length - 1) ? "<br>" : "");
-            lyricP.innerHTML += lyric.lines[i] + (lyric.lines[i] == "" ? "<br>" : "");
-            lyricDiv.appendChild(lyricP);
+            // lyricP.innerHTML += lyric.lines[i] + (lyric.lines[i] == "" ? "<br>" : "");
+            // lyricChunk.appendChild(lyricP);
+
+            lyricChunk.innerHTML += (i > 0 ? "<br>" : "") + lyric.lines[i] + ((lyric.lines[i] == "" && i == lyric.lines.length - 1) ? "<br>" : "");
         }
-        lyricsDiv.appendChild(lyricDiv);
+        lyricsDiv.appendChild(lyricChunk);
     });
 });}
 
